@@ -1,0 +1,9 @@
+package-lock.json
+node_modules/*
+node_modules/
+*.tgz
+*.zip
+*.vscode
+*.DS_Store
+jenkin.sh
+port.txt

@@ -1,0 +1,575 @@
+define({ "api": [
+  {
+    "type": "get",
+    "url": "/book/getBookForSale",
+    "title": "Get Books For Sale",
+    "version": "1.0.0",
+    "group": "Book",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "generalSearch",
+            "description": "<p>Search keyword (Optional)</p>"
+          }
+        ]
+      }
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>User's Access token</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success",
+          "content": "{\n    \"status\": 200,\n    \"data\": [\n        {\n            \"_id\": \"5d6bfe28a126b3243059d79b\",\n            \"title\": \"MoodCafe\",\n            \"description\": \"Mood\",\n            \"price\": 34511,\n            \"ISBN\": 888,\n            \"stock\": 411,\n            \"author\": \"Achit\",\n            \"isDeleted\": false,\n            \"status\": \"Active\",\n            \"user_id\": \"5d6bcaea4a15751e48a3d43f\",\n            \"createdAt\": \"2019-09-01T17:21:44.099Z\",\n            \"__v\": 0,\n            \"seller\": {\n                \"_id\": \"5d6bcaea4a15751e48a3d43f\",\n                \"first_name\": \"Archit\",\n                \"last_name\": \"Singh\",\n                \"email\": \"architsingh99@gmail.com\",\n                \"password\": \"$2a$08$RMApD3zFCRQnG33Mfm2lc./pY3rQKDDmweIyfTmajurMalKGReQn6\",\n                \"isEmailVerified\": true,\n                \"verification_code\": \"\",\n                \"isDeleted\": false,\n                \"isActive\": true,\n                \"createdAt\": \"2019-09-01T13:43:06.164Z\",\n                \"__v\": 0\n            }\n        },\n        {\n            \"_id\": \"5d6bfe37a126b3243059d79c\",\n            \"title\": \"MoodCafe\",\n            \"description\": \"Mood\",\n            \"price\": 34511,\n            \"ISBN\": 999,\n            \"stock\": 411,\n            \"author\": \"Achit\",\n            \"isDeleted\": false,\n            \"status\": \"Active\",\n            \"user_id\": \"5d6bcaea4a15751e48a3d43f\",\n            \"createdAt\": \"2019-09-01T17:21:59.876Z\",\n            \"__v\": 0,\n            \"seller\": {\n                \"_id\": \"5d6bcaea4a15751e48a3d43f\",\n                \"first_name\": \"Archit\",\n                \"last_name\": \"Singh\",\n                \"email\": \"architsingh99@gmail.com\",\n                \"password\": \"$2a$08$RMApD3zFCRQnG33Mfm2lc./pY3rQKDDmweIyfTmajurMalKGReQn6\",\n                \"isEmailVerified\": true,\n                \"verification_code\": \"\",\n                \"isDeleted\": false,\n                \"isActive\": true,\n                \"createdAt\": \"2019-09-01T13:43:06.164Z\",\n                \"__v\": 0\n            }\n        }\n    ],\n    \"message\": \"Book Fetched Successfully.\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/routes/api/book.routes.js",
+    "groupTitle": "Book",
+    "name": "GetBookGetbookforsale"
+  },
+  {
+    "type": "get",
+    "url": "/book/getBooksPerSeller/:user_id",
+    "title": "Get Books of a Seller",
+    "version": "1.0.0",
+    "group": "Book",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "generalSearch",
+            "description": "<p>Search keyword (Optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "user_id",
+            "description": "<p>Seller id</p>"
+          }
+        ]
+      }
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>User's Access token</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success",
+          "content": "{\n    \"status\": 200,\n    \"data\": [\n        {\n            \"_id\": \"5d6bfe28a126b3243059d79b\",\n            \"title\": \"MoodCafe\",\n            \"description\": \"Mood\",\n            \"price\": 34511,\n            \"ISBN\": 888,\n            \"stock\": 411,\n            \"author\": \"Achit\",\n            \"isDeleted\": false,\n            \"status\": \"Active\",\n            \"user_id\": \"5d6bcaea4a15751e48a3d43f\",\n            \"createdAt\": \"2019-09-01T17:21:44.099Z\",\n            \"__v\": 0,\n            \"seller\": {\n                \"_id\": \"5d6bcaea4a15751e48a3d43f\",\n                \"first_name\": \"Archit\",\n                \"last_name\": \"Singh\",\n                \"email\": \"architsingh99@gmail.com\",\n                \"password\": \"$2a$08$RMApD3zFCRQnG33Mfm2lc./pY3rQKDDmweIyfTmajurMalKGReQn6\",\n                \"isEmailVerified\": true,\n                \"verification_code\": \"\",\n                \"isDeleted\": false,\n                \"isActive\": true,\n                \"createdAt\": \"2019-09-01T13:43:06.164Z\",\n                \"__v\": 0\n            }\n        },\n        {\n            \"_id\": \"5d6bfe37a126b3243059d79c\",\n            \"title\": \"MoodCafe\",\n            \"description\": \"Mood\",\n            \"price\": 34511,\n            \"ISBN\": 999,\n            \"stock\": 411,\n            \"author\": \"Achit\",\n            \"isDeleted\": false,\n            \"status\": \"Active\",\n            \"user_id\": \"5d6bcaea4a15751e48a3d43f\",\n            \"createdAt\": \"2019-09-01T17:21:59.876Z\",\n            \"__v\": 0,\n            \"seller\": {\n                \"_id\": \"5d6bcaea4a15751e48a3d43f\",\n                \"first_name\": \"Archit\",\n                \"last_name\": \"Singh\",\n                \"email\": \"architsingh99@gmail.com\",\n                \"password\": \"$2a$08$RMApD3zFCRQnG33Mfm2lc./pY3rQKDDmweIyfTmajurMalKGReQn6\",\n                \"isEmailVerified\": true,\n                \"verification_code\": \"\",\n                \"isDeleted\": false,\n                \"isActive\": true,\n                \"createdAt\": \"2019-09-01T13:43:06.164Z\",\n                \"__v\": 0\n            }\n        }\n    ],\n    \"message\": \"Book Fetched Successfully.\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/routes/api/book.routes.js",
+    "groupTitle": "Book",
+    "name": "GetBookGetbookspersellerUser_id"
+  },
+  {
+    "type": "post",
+    "url": "/book/deleteBook",
+    "title": "Delete a book",
+    "version": "1.0.0",
+    "group": "Book",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "book_id",
+            "description": "<p>Book id</p>"
+          }
+        ]
+      }
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>User's Access token</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success",
+          "content": "{\n    \"status\": 200,\n    \"data\": {\n        \"n\": 1,\n        \"opTime\": {\n            \"ts\": \"6731757484337266689\",\n            \"t\": 1\n        },\n        \"electionId\": \"7fffffff0000000000000001\",\n        \"ok\": 1,\n        \"operationTime\": \"6731757484337266689\",\n        \"$clusterTime\": {\n            \"clusterTime\": \"6731757484337266689\",\n            \"signature\": {\n                \"hash\": \"OJ22BAjk9I1/JnX6b+exzUu9TCU=\",\n                \"keyId\": \"6731441172880818177\"\n            }\n        },\n        \"deletedCount\": 1\n    },\n    \"message\": \"Book Removed Successfully.\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/routes/api/book.routes.js",
+    "groupTitle": "Book",
+    "name": "PostBookDeletebook"
+  },
+  {
+    "type": "post",
+    "url": "/book/save",
+    "title": "Save A Book",
+    "version": "1.0.0",
+    "group": "Book",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "title",
+            "description": "<p>Titlle</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "description",
+            "description": "<p>Description</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "author",
+            "description": "<p>Author</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "price",
+            "description": "<p>Price</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "stock",
+            "description": "<p>Stock</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "ISBN",
+            "description": "<p>ISBN</p>"
+          }
+        ]
+      }
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>User's Access token</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success",
+          "content": "{\n    \"status\": 200,\n    \"data\": {\n        \"title\": \"www11\",\n        \"description\": \"awesome11\",\n        \"price\": 34511,\n        \"ISBN\": 1234511,\n        \"stock\": 411,\n        \"author\": \"Archit11\",\n        \"isDeleted\": false,\n        \"status\": \"Active\",\n        \"user_id\": \"5d6bcaea4a15751e48a3d43f\",\n        \"_id\": \"5d6bfcd6ad64e623a48c1622\",\n        \"createdAt\": \"2019-09-01T17:16:06.197Z\",\n        \"__v\": 0\n    },\n    \"message\": \"Book saved.\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/routes/api/book.routes.js",
+    "groupTitle": "Book",
+    "name": "PostBookSave"
+  },
+  {
+    "type": "post",
+    "url": "/book/statusChange",
+    "title": "Change Status of a book",
+    "version": "1.0.0",
+    "group": "Book",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "book_id",
+            "description": "<p>Book id</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "status",
+            "description": "<p>New Status of the book [Active, Inactive]</p>"
+          }
+        ]
+      }
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>User's Access token</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success",
+          "content": "{\n    \"status\": 200,\n    \"data\": {\n        \"title\": \"www11\",\n        \"description\": \"awesome11\",\n        \"price\": 34511,\n        \"ISBN\": 1234511,\n        \"stock\": 411,\n        \"author\": \"Archit11\",\n        \"isDeleted\": false,\n        \"status\": \"Active\",\n        \"user_id\": \"5d6bcaea4a15751e48a3d43f\",\n        \"_id\": \"5d6bfcd6ad64e623a48c1622\",\n        \"createdAt\": \"2019-09-01T17:16:06.197Z\",\n        \"__v\": 0\n    },\n    \"message\": \"Book Stock updated\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/routes/api/book.routes.js",
+    "groupTitle": "Book",
+    "name": "PostBookStatuschange"
+  },
+  {
+    "type": "post",
+    "url": "/book/updateBookStock",
+    "title": "Increase the stock of a book",
+    "version": "1.0.0",
+    "group": "Book",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "stock",
+            "description": "<p>Increase Number of books</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "book_id",
+            "description": "<p>Book id</p>"
+          }
+        ]
+      }
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>User's Access token</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success",
+          "content": "{\n    \"status\": 200,\n    \"data\": {\n        \"title\": \"www\",\n        \"description\": \"awesome\",\n        \"price\": 345,\n        \"ISBN\": 12345,\n        \"stock\": 44,\n        \"author\": \"Archit\",\n        \"isDeleted\": false,\n        \"status\": \"Active\",\n        \"user_id\": \"5d6bcaea4a15751e48a3d43f\",\n        \"_id\": \"5d6bfc97ad64e623a48c1621\",\n        \"createdAt\": \"2019-09-01T17:15:03.530Z\",\n        \"__v\": 0\n    },\n    \"message\": \"Book Stock updated\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/routes/api/book.routes.js",
+    "groupTitle": "Book",
+    "name": "PostBookUpdatebookstock"
+  },
+  {
+    "type": "post",
+    "url": "/transaction/save",
+    "title": "Save A Transaction",
+    "version": "1.0.0",
+    "group": "Transaction",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "email",
+            "description": "<p>Email</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "book_id",
+            "description": "<p>Book Id</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success",
+          "content": "{\n    \"status\": 200,\n    \"data\": {\n        \"email\": \"architsingh99@gmail.com\",\n        \"isDeleted\": false,\n        \"status\": \"Active\",\n        \"book_id\": \"5d6bfcd6ad64e623a48c1622\",\n        \"_id\": \"5d6c0a99739ec80938768f95\",\n        \"createdAt\": \"2019-09-01T18:14:49.222Z\",\n        \"__v\": 0\n    },\n    \"message\": \"transaction saved.\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/routes/api/transaction.routes.js",
+    "groupTitle": "Transaction",
+    "name": "PostTransactionSave"
+  },
+  {
+    "type": "post",
+    "url": "/user/changepassword",
+    "title": "Change Password",
+    "version": "1.0.0",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "old_password",
+            "description": "<p>Old password</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "new_password",
+            "description": "<p>New password</p>"
+          }
+        ]
+      }
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>User's Access token</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success",
+          "content": "{\n    \"status\": 200,\n    \"data\": {\n        \"first_name\": \"Archit\",\n        \"last_name\": \"Singh\",\n        \"email\": \"architsingh99@gmail.com\",\n        \"password\": \"$2a$08$RMApD3zFCRQnG33Mfm2lc./pY3rQKDDmweIyfTmajurMalKGReQn6\",\n        \"isEmailVerified\": true,\n        \"verification_code\": \"\",\n        \"isDeleted\": false,\n        \"isActive\": true,\n        \"_id\": \"5d6bcaea4a15751e48a3d43f\",\n        \"createdAt\": \"2019-09-01T13:43:06.164Z\",\n        \"__v\": 0\n    },\n    \"message\": \"Password Changed Successfully\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/routes/api/user.routes.js",
+    "groupTitle": "User",
+    "name": "PostUserChangepassword"
+  },
+  {
+    "type": "post",
+    "url": "/user/forgotpassword",
+    "title": "Forgot Password",
+    "version": "1.0.0",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "email",
+            "description": "<p>User Email.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success",
+          "content": "{\n    \"status\": 200,\n    \"data\": {},\n    \"message\": \"New password sent to provided Email\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/routes/api/user.routes.js",
+    "groupTitle": "User",
+    "name": "PostUserForgotpassword"
+  },
+  {
+    "type": "post",
+    "url": "/user/signin",
+    "title": "Verify OTP",
+    "version": "1.0.0",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "email",
+            "description": "<p>User Email.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "otp",
+            "description": "<p>OTP</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success",
+          "content": "{\n    \"status\": 200,\n    \"data\": {},\n    \"message\": \"Email verified Successfully\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/routes/api/user.routes.js",
+    "groupTitle": "User",
+    "name": "PostUserSignin"
+  },
+  {
+    "type": "post",
+    "url": "/user/signup",
+    "title": "Sign Up",
+    "version": "1.0.0",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "email",
+            "description": "<p>User Email.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "password",
+            "description": "<p>Password.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "first_name",
+            "description": "<p>First Name.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "last_name",
+            "description": "<p>Last Name.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success",
+          "content": "{\n    \"status\": 200,\n    \"data\": {\n        \"first_name\": \"Archit\",\n        \"last_name\": \"Singh\",\n        \"email\": \"architsingh99@gmail.com\",\n        \"password\": \"123456\",\n        \"isEmailVerified\": false,\n        \"verification_code\": \"9509\",\n        \"isDeleted\": false,\n        \"isActive\": true,\n        \"_id\": \"5d6bc4094bb7db06e8f37444\",\n        \"__v\": 0\n    },\n    \"message\": \"Registration Successful, Please Check your Email for verification OTP\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/routes/api/user.routes.js",
+    "groupTitle": "User",
+    "name": "PostUserSignup"
+  },
+  {
+    "type": "post",
+    "url": "/user/verifyotp",
+    "title": "Verify OTP",
+    "version": "1.0.0",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "email",
+            "description": "<p>User Email.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "otp",
+            "description": "<p>OTP</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success",
+          "content": "{\n    \"status\": 200,\n    \"data\": {},\n    \"message\": \"Email verified Successfully\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/routes/api/user.routes.js",
+    "groupTitle": "User",
+    "name": "PostUserVerifyotp"
+  }
+] });

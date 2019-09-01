@@ -1,0 +1,119 @@
+<!-- begin:: Aside -->
+<button class="kt-aside-close " id="kt_aside_close_btn"><i class="la la-close"></i></button>
+<div class="kt-aside  kt-aside--fixed  kt-grid__item kt-grid kt-grid--desktop kt-grid--hor-desktop" id="kt_aside">
+
+    <!-- begin:: Aside -->
+    <div class="kt-aside__brand kt-grid__item  " id="kt_aside_brand">
+        <div class="kt-aside__brand-logo">
+            <a href="<%= generateUrl('admin.user.dashboard') %>">
+                <img alt="Logo" src="/logos/gblogo.png" style="max-width: 80px;" />
+            </a>
+        </div>
+    </div>
+
+    <!-- end:: Aside -->
+
+    <!-- begin:: Aside Menu -->
+    <div class="kt-aside-menu-wrapper kt-grid__item kt-grid__item--fluid" id="kt_aside_menu_wrapper">
+        <div id="kt_aside_menu" class="kt-aside-menu kt-aside-menu--dropdown" data-ktmenu-vertical="1" data-ktmenu-dropdown="1" data-ktmenu-scroll="1">
+            <ul class="kt-menu__nav ">
+                <li class="kt-menu__item  <%=(page_name == 'user-dashboard') ? 'kt-menu__item--active' : ''%>" aria-haspopup="true">
+                    <a href="<%= generateUrl('admin.user.dashboard') %>" class="kt-menu__link ">
+                        <i class="kt-menu__link-icon flaticon-squares-1"></i>
+                        <span class="kt-menu__link-text">Dashboard</span>
+                    </a>
+                </li>
+                <li class="kt-menu__item " aria-haspopup="true">
+                    <a href="<%= generateUrl('admin.managers') %>" class="kt-menu__link ">
+                        <i class="kt-menu__link-icon flaticon2-user"></i>
+                        <span class="kt-menu__link-text">Managers</span>
+                    </a>
+                </li>
+                <li class="kt-menu__item " aria-haspopup="true">
+                    <a href="<%= generateUrl('admin.customers') %>" class="kt-menu__link ">
+                        <i class="kt-menu__link-icon flaticon-users"></i>
+                        <span class="kt-menu__link-text">Customers</span>
+                    </a>
+                </li>
+                <li class="kt-menu__item " aria-haspopup="true">
+                    <a href="<%= generateUrl('admin.boosters') %>" class="kt-menu__link ">
+                        <i class="kt-menu__link-icon flaticon2-rocket"></i>
+                        <span class="kt-menu__link-text">Boosters</span>
+                    </a>
+                </li>
+                <li class="kt-menu__item " aria-haspopup="true">
+                    <a href="<%= generateUrl('admin.assistants') %>" class="kt-menu__link ">
+                        <i class="kt-menu__link-icon flaticon2-user-1"></i>
+                        <span class="kt-menu__link-text">Assistants</span>
+                    </a>
+                </li>
+                <li class="kt-menu__item  <%=(page_name == 'language-list') ? 'kt-menu__item--active' : ''%>" aria-haspopup="true">
+                    <a href="<%= generateUrl('admin.language.list') %>" class="kt-menu__link ">
+                        <i class="kt-menu__link-icon flaticon-interface-2"></i>
+                        <span class="kt-menu__link-text">Language</span>
+                    </a>
+                </li>
+                <li class="kt-menu__item  <%=(page_name == 'game-list') ? 'kt-menu__item--active' : ''%>" aria-haspopup="true">
+                    <a href="<%= generateUrl('admin.game.list') %>" class="kt-menu__link ">
+                        <i class="kt-menu__link-icon flaticon-letter-g"></i>
+                        <span class="kt-menu__link-text">Game</span>
+                    </a>
+                </li>
+                <li class="kt-menu__item  <%=(page_name == 'leagueoflegends_champion-list') ? 'kt-menu__item--active' : ''%>" aria-haspopup="true">
+                    <a href="<%= generateUrl('admin.leagueoflegends_champion.list') %>" class="kt-menu__link ">
+                        <i class="kt-menu__link-icon flaticon2-shield"></i>
+                        <span class="kt-menu__link-text">LOL Champions</span>
+                    </a>
+                    
+                </li>
+                <li class="kt-menu__item  <%=(page_name == 'overwatch_heros-list') ? 'kt-menu__item--active' : ''%>" aria-haspopup="true">
+                    <a href="<%= generateUrl('admin.overwatch_heros.list') %>" class="kt-menu__link ">
+                        <i class="kt-menu__link-icon flaticon-user-ok"></i>
+                        <span class="kt-menu__link-text">Overwatch Heros</span>
+                    </a>
+                </li>
+                <li class="kt-menu__item  <%=(page_name == 'order-management') ? 'kt-menu__item--active' : ''%>" aria-haspopup="true">
+                    <a href="<%= generateUrl('admin.order.list') %>" class="kt-menu__link ">
+                        <i class="kt-menu__link-icon flaticon2-shopping-cart-1"></i>
+                        <span class="kt-menu__link-text">Orders</span>
+                    </a>
+                </li>
+                <li class="kt-menu__item  <%=(page_name == 'cms-list') ? 'kt-menu__item--active' : ''%>" aria-haspopup="true">
+                    <a href="<%= generateUrl('admin.cms.list') %>" class="kt-menu__link ">
+                        <i class="kt-menu__link-icon flaticon2-document"></i>
+                        <span class="kt-menu__link-text">CMS</span>
+                    </a>
+                </li>
+                <li class="kt-menu__item  <%=(page_name == 'email_template-list') ? 'kt-menu__item--active' : ''%>" aria-haspopup="true">
+                    <a href="<%= generateUrl('admin.emailtemplate.list') %>" class="kt-menu__link ">
+                        <i class="kt-menu__link-icon flaticon2-soft-icons"></i>
+                        <span class="kt-menu__link-text">Email Templates</span>
+                    </a>
+                </li>
+                <li class="kt-menu__item  <%=(page_name == 'setting-list') ? 'kt-menu__item--active' : ''%>" aria-haspopup="true">
+                    <a href="<%= generateUrl('admin.setting.list') %>" class="kt-menu__link ">
+                        <i class="kt-menu__link-icon flaticon2-gear"></i>
+                        <span class="kt-menu__link-text">Settings</span>
+                    </a>
+                </li>
+                <li class="kt-menu__item  <%=(page_name == 'region-list') ? 'kt-menu__item--active' : ''%>" aria-haspopup="true">
+                    <a href="<%= generateUrl('admin.region.list') %>" class="kt-menu__link ">
+                        <i class="kt-menu__link-icon flaticon-globe"></i>
+                        <span class="kt-menu__link-text">Region</span>
+                    </a>
+                </li>
+                <li class="kt-menu__item  <%=(page_name == 'rank-list') ? 'kt-menu__item--active' : ''%>" aria-haspopup="true">
+                    <a href="<%= generateUrl('admin.rank.list') %>" class="kt-menu__link ">
+                        <i class="kt-menu__link-icon flaticon-list"></i>
+                        <span class="kt-menu__link-text">Rank</span>
+                    </a>
+                </li>
+                <!-- end section booster -->
+            </ul>
+        </div>
+    </div>
+
+    <!-- end:: Aside Menu -->
+</div>
+
+<!-- end:: Aside -->
